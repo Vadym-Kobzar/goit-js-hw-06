@@ -13,7 +13,12 @@ const images = [
     },
 ];
 const galleryItem = ({ url, alt }) =>
-    `<li><img src = "${url}" alt = "${alt}" width = "300" height = "200" ></li>`;
+    `<li><img class = "picture" src = "${url}" alt = "${alt}" width = "300" height = "200" ></li>`;
 const galleryEl = images.reduce((item, items) => item + galleryItem(items), "");
 const galleryList = document.querySelector(".gallery");
 galleryList.insertAdjacentHTML("afterbegin", galleryEl);
+
+const pictures = document.querySelectorAll(".picture");
+
+galleryList.style.display = "flex";
+galleryList.style.gap = "10px";
